@@ -2,6 +2,7 @@ import React from "react";
 
 class Form extends React.Component {
   render() {
+    const { handleChange } = this.props
     return(
       <fieldset>
         <legend>Dados</legend>
@@ -10,42 +11,49 @@ class Form extends React.Component {
         type="name"
         name="name"
         maxLength="40"
-        required />
+        required 
+        onChange={handleChange}
+        />
 
         Email:
         <input
         type="email"
         name="email"
         maxLength="50"
-        required />
+        required
+        onChange={handleChange} />
 
         CPF:
         <input
-        type="cpf"
-        name="text"
+        type="text"
+        name="cpf"
         maxLength="11"
-        required />
+        required
+        onChange={handleChange} />
 
         Endereço:
         <input
         type="text"
         name="address"
         maxLength="200"
-        required />
+        required
+        onChange={handleChange} />
 
         Cidade:
         <input
         type="text"
         name="city"
         maxLength="28"
-        required />
+        required
+        onChange={handleChange} />
 
         <label htmlFor="apart">
           <input
           type="radio"
           id="apart"
           name="type"
-          value="apart" />
+          value="apart"
+          onClick={handleChange} />
         </label>
         apartamento
 
@@ -54,7 +62,8 @@ class Form extends React.Component {
           type="radio"
           id="house"
           name="type"
-          value="house" />
+          value="house" 
+          onChange={handleChange}/>
         </label>
         casa
       </fieldset>
